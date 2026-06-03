@@ -1,8 +1,13 @@
+import HeroSection from "../Components/HeroSection"
+import FeaturedSection from "../Components/FeaturedSection"
 
 
 const Home = () => {
   return (
-    <div className="p-4 text-gray-800">Home</div>
+    <div>
+      <HeroSection />
+      <FeaturedSection />
+    </div>
   )
 }
 
