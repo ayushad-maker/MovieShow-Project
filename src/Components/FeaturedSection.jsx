@@ -28,6 +28,9 @@ const FeaturedSection = () => {
       <div onClick={() => {navigate("/movies"); scrollTo(0,0)}} className="flex items-center justify-center gap-6 overflow-x-auto pb-10">
         <button className="px-10 py-3 text-sm bg-primary text-white rounded-md hover:bg-primary-dull cursor-pointer">Show More</button>
       </div>
+
+  
+
     </div>
     </>
 

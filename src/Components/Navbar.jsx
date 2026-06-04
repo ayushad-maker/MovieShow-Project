@@ -58,7 +58,7 @@ border-gray-300/20 overflow-hidden transition-[width] duration-300 ${isMenuOpen 
           Releases
         </Link>
         <Link
-          to="/people"
+          to="/favourites"
             onClick={()=> {setIsMenuOpen(false),scrollTo(0,0)}}
           className=" text-lg font-medium hover:text-primary transition mx-6"
         >
