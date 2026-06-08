@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="md:max-w-96">
             <img
               alt=""
-              class="h-8"
+              className="hover:scale-110 transition ease-in-out duration-100 h-8"
               src={assets.logo}
             />
             <p className="mt-6 text-sm">
@@ -20,45 +20,45 @@ const Footer = () => {
               <img
                 src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/refs/heads/main/assets/appDownload/googlePlayBtnBlack.svg"
                 alt="google play"
-                className="h-10 w-auto border border-white rounded"
+                className="h-10 w-auto border border-white rounded hover:scale-110 transition ease-in duration-100"
               />
               <img
                 src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/refs/heads/main/assets/appDownload/appleStoreBtnBlack.svg"
                 alt="app store"
-                className="h-10 w-auto border border-white rounded"
+                className="h-10 w-auto border border-white rounded hover:scale-110 transition ease-in duration-100"
               />
             </div>
           </div>
           <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
             <div>
-              <h2 className="font-semibold mb-5">Company</h2>
+              <h2 className="font-semibold mb-5 hover:text-primary-dull">Company</h2>
               <ul className="text-sm space-y-2">
                 <li>
-                  <a href="#">Home</a>
+                  <a className="hover:text-primary-dull" href="#">Home</a>
                 </li>
                 <li>
-                  <a href="#">About us</a>
+                  <a className="hover:text-primary-dull" href="#">About us</a>
                 </li>
                 <li>
-                  <a href="#">Contact us</a>
+                  <a className="hover:text-primary-dull" href="#">Contact us</a>
                 </li>
                 <li>
-                  <a href="#">Privacy policy</a>
+                  <a className="hover:text-primary-dull" href="#">Privacy policy</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="font-semibold mb-5">Get in touch</h2>
+              <h2 className="font-semibold mb-5 hover:text-primary-dull">Get in touch</h2>
               <div className="text-sm space-y-2">
-                <p>+1-234-567-890</p>
-                <p>contact@example.com</p>
+                <p className="hover:text-primary-dull">+1-234-567-890</p>
+                <p className="hover:text-primary-dull">contact@example.com</p>
               </div>
             </div>
           </div>
         </div>
         <p className="pt-4 text-center text-sm pb-5">
           Copyright {new Date().getFullYear()} ©{" "}
-          <a href="https://prebuiltui.com">QuickShow</a>. All Right Reserved.
+          <a className="hover:text-primary-dull" href="https://prebuiltui.com">QuickShow</a>. All Right Reserved.
         </p>
       </footer>
     </>
