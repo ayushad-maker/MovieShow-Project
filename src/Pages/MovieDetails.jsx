@@ -1,25 +1,31 @@
 import { useEffect, useState } from "react";
-import { data, useParams } from "react-router-dom";
-import { dummyDateTimeData, dummyShowsData} from "../assets/assets";
+import { data, useNavigate, useParams } from "react-router-dom";
+import { dummyDateTimeData, dummyShowsData } from "../assets/assets";
 import BlurCircle from "../Components/BlurCircle";
 import { Heart, PlayCircleIcon, StarIcon } from "lucide-react";
 import timeFormat from "../Lib/timeFormat";
 import DateSelect from "../Components/DateSelect";
+import MovieCard from "../Components/MovieCard";
+import Loading from "../Components/Loading";
+
 
 const MovieDetails = () => {
+
+  const navigate = useNavigate();
   const { id } = useParams();
   const [show, setShow] = useState(null);
 
   const getShow = async () => {
     const show = dummyShowsData.find((show) => show._id === id);
-  
-    setShow({
+    if(show){
+       setShow({
       movie: show,
       dateTime: dummyDateTimeData,
     });
   };
+    }
 
-  
+   
 
   useEffect(() => {
     getShow();
@@ -68,30 +74,49 @@ const MovieDetails = () => {
             <button className="bg-gray-700 p-2.5 rounded-full transition cursor-pointer active:scale-95">
               <Heart className={`w-5 h-5`} />
             </button>
-          
           </div>
         </div>
       </div>
 
       <p className="text-lg font-medium mt-20">Your Favourite Cast</p>
       <div className="overflow-x-auto no-scrollbar mt-20 pb-4">
-       <div className="flex items-center gap-4 w-max px-4">
-        {show.movie.casts.slice(0,11).map((cast,index)=>(
-          <div key={index} className="flex items-center text-center flex-col ">
-            <img src={cast.profile_path} alt="" className="rounded-full h-20 md:h-20 aspect-square object-cover" />
-            <p className="font-medium text-sm mt-3">{cast.name}</p>
-          </div>
-        ))}
-
-       </div>
+        <div className="flex items-center gap-4 w-max px-4">
+          {show.movie.casts.slice(0, 11).map((cast, index) => (
+            <div
+              key={index}
+              className="flex items-center text-center flex-col "
+            >
+              <img
+                src={cast.profile_path}
+                alt=""
+                className="rounded-full h-20 md:h-20 aspect-square object-cover"
+              />
+              <p className="font-medium text-sm mt-3">{cast.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <DateSelect dateTime={show.dateTime} id={id} />
 
+      <p className="text-lg font-medium mt-20 mb-8">You May Also Like</p>
+      <div className="flex flex-wrap max-sm:justify-center gap-10 items-center ">
+        {dummyShowsData.slice(0, 4).map((movie, index) => (
+          <MovieCard key={index} movie={movie} />
+        ))}
+      </div>
+
+      <BlurCircle left="100px" />
+
+      <div className="flex justify-center mt-20">
+        <button onClick={()=>{navigate("/movies"); scrollTo(0,0)}} className="px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer">
+          Show More
+        </button>
+      </div>
     </div>
   ) : (
     <div>
-      <h1>Loading...</h1>
+      <h1><Loading /></h1>
     </div>
   );
 };
