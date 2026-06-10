@@ -98,6 +98,7 @@ const SeatLayout = () => {
       <div className="relative flex-1 flex flex-col items-center max-md:mt-16 ">
         <BlurCircle top="-100px" left="-100px" />
         <BlurCircle top="0px" left="0px" />
+        <BlurCircle top="10px" right="-100px"/>
         <h1 className="text-2xl font-semibold mb-4">Select your Seat</h1>
         <img src={assets.screenImage} alt="" />
         <p className="text-gray-400 text-md mb-6">Screen Side</p>
