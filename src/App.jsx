@@ -10,7 +10,7 @@ import Footer from "./Components/Footer.jsx";
 import { Toaster } from "react-hot-toast";
 import Layout from "./Pages/admin/Layout.jsx";
 import DashBoard from "./Pages/admin/DashBoard.jsx";
-import Addshows from "./Pages/admin/Addshows.jsx";
+import AddShows from "./Pages/admin/AddShows.jsx";
 import ListShows from "./Pages/admin/ListShows.jsx";
 import ListBookings from "./Pages/admin/ListBookings.jsx";
 
@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/admin/*" element={<Layout />}>
           <Route index element={<DashBoard />} />
-          <Route path="add-shows" element={<Addshows />} />
+          <Route path="add-shows" element={<AddShows />} />
           <Route path="list-shows" element={<ListShows />} />
           <Route path="list-bookings" element={<ListBookings />} />
         </Route>
