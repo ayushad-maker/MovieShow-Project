@@ -19,9 +19,9 @@ const FeaturedSection = () => {
 
       </div>
 
-      <div className="flex  flex-wrap items-center justify-start gap-28 overflow-x-auto pb-10">
+      <div className="flex group flex-wrap items-center justify-start gap-28 overflow-x-auto pb-10">
         {dummyShowsData.slice(0,8).map((show) => (
-          <MovieCard key={show._id} movie={show} />
+          <MovieCard  key={show._id} movie={show}/>
         ))}
       </div>
 
